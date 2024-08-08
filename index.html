@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandwick Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <title>Portfolio Sandwick</title>
 
   <!--
     - favicon
@@ -73,9 +75,22 @@
 
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:claretelloydiee@gmail.com" class="contact-link">claretelloydiee@gmail.com</a>
+                <a href="#" data-copy-email-btn class="contact-link">claretelloydiee@gmail.com</a>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+            <script>
+              document.getElementById('copyEmailLink').addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                Toastify({
+                  text: "Email copied to clipboard!",
+                  duration: 3000,
+                  gravity: "top",
+                  position: "center",
+                  backgroundColor: "#007bff",
+                }).showToast();
+              });
+            </script>
 
           </li>
 
@@ -1313,24 +1328,31 @@
 
         <section class="contact-form" style="align-items: center;">
 
-      <h3 class="h3 form-title" style="text-align: center;">Contact Me in my Socials</h3>
+      <h3 class="h3 form-title" style="text-align: center;">Contact Me</h3>
 
-          <!-- <form action="send_email.php" class="form" data-form>
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
+            <input type="hidden" name="access_key" value="14783f2d-1eb0-4995-8f68-1722cd3235e6" />
+            <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+            <input type="hidden" name="from_name" value="My Website" />
+             
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Full name" required data-form-input />  
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <div class="input-wrapper">
+            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required data-form-input />
+            </div>
+            <div class="input-wrapper">
+            <input type="text" id="phone" name="phone" class="form-input" placeholder="Phone (Optional) +63" required data-form-input />
+            </div>
+            <textarea name="message" class="form-input"  id="message"  placeholder="Your message" required data-form-input></textarea>
+            
+            <button class="form-btn" type="submit" >
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
 
-          </form> -->
+          </form>
 
         </section>
         
