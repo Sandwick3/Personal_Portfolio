@@ -115,24 +115,49 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector("[data-form]");
+    const formInputs = document.querySelectorAll("[data-form-input]");
+    const formBtn = document.querySelector("[data-form-btn]");
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+    // Add event listener to form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
+        // Collect form data
+        const formData = new FormData(form);
 
-  });
-}
+        // Send form data to send_email.php using fetch API
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Form submitted successfully.');
+                form.reset(); // Optionally reset the form after successful submission
+            } else {
+                throw new Error('Form submission failed.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again later.');
+        });
+    });
+
+    // Enable submit button when all required fields are filled
+    form.addEventListener('input', function() {
+        const inputs = form.querySelectorAll('[data-form-input]');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (input.value.trim() === '') {
+                isValid = false;
+            }
+        });
+        formBtn.disabled = !isValid;
+    });
+});
 
 
 
@@ -143,17 +168,23 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    
+    // Remove active class from all links and pages
+    navigationLinks.forEach(link => link.classList.remove("active"));
+    pages.forEach(page => page.classList.remove("active"));
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+    // Add active class to the clicked link
+    this.classList.add("active");
+
+    // Find the matching page and add active class to it
+    const selectedPage = this.innerHTML.toLowerCase();
+    pages.forEach(page => {
+      if (page.dataset.page === selectedPage) {
+        page.classList.add("active");
       }
-    }
+    });
 
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
   });
 }
