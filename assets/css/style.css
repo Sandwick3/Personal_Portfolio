@@ -760,13 +760,13 @@ main {
  * #software 
  */
 
-.softwares { margin-bottom: 15px; }
+.softwares { margin-bottom: 5px; }
 
 .software-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 15px;
+  gap: 30px;
   margin: 0 -15px;
   padding: 25px;
   padding-bottom: 25px;
@@ -778,7 +778,8 @@ main {
 }
 
 .software-item {
-  min-width: 15%;
+  min-width: 10%;
+  filter:saturate(80%);
   scroll-snap-align: start;
 }
 
