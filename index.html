@@ -1,488 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Portfolio Sandwick</title>
 
-  <title>Portfolio Sandwick</title>
-
-  <!--
+    <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/Logo 2.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/images/Logo 2.png"
+      type="image/x-icon"
+    />
 
-  <!--
+    <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <!--
+    <!--
     - google font link
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
-  <!--
+  <body>
+    <!--
     - #MAIN
   -->
 
-  <main>
-
-    <!--
+    <main>
+      <!--
       - #SIDEBAR
     -->
 
-    <aside class="sidebar" data-sidebar>
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/ProfileTrimmed2.png"
+              alt="Lloyd Clarete"
+              width="80"
+            />
+          </figure>
 
-      <div class="sidebar-info">
+          <div class="info-content">
+            <h1 class="name" title="Lloyd Clarete">Lloyd Clarete</h1>
 
-        <figure class="avatar-box">
-          <img src="./assets/images/ProfileTrimmed2.png" alt="Lloyd Clarete" width="80">
-        </figure>
+            <p class="title">Graphic Designer - Video Editor</p>
+          </div>
 
-        <div class="info-content">
-          <h1 class="name" title="Lloyd Clarete">Lloyd Clarete</h1>
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
 
-          <p class="title">Graphic Designer - Video Editor</p>
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
 
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
 
-      </div>
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+                <a href="#" data-copy-email-btn class="contact-link"
+                  >claretelloydiee@gmail.com</a
+                >
+              </div>
+              <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+              <script>
+                document
+                  .getElementById("copyEmailLink")
+                  .addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent the default link behavior
 
-      <div class="sidebar-info_more">
+                    Toastify({
+                      text: "Email copied to clipboard!",
+                      duration: 3000,
+                      gravity: "top",
+                      position: "center",
+                      backgroundColor: "#007bff",
+                    }).showToast();
+                  });
+              </script>
+            </li>
 
-        <div class="separator"></div>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
 
-        <ul class="contacts-list">
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
 
-          <li class="contact-item">
+                <a href="tel:+12133522795" class="contact-link"
+                  >+639 85 254 1182</a
+                >
+              </div>
+            </li>
 
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-                <a href="#" data-copy-email-btn class="contact-link">claretelloydiee@gmail.com</a>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-            <script>
-              document.getElementById('copyEmailLink').addEventListener('click', function (event) {
-                event.preventDefault(); // Prevent the default link behavior
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
 
-                Toastify({
-                  text: "Email copied to clipboard!",
-                  duration: 3000,
-                  gravity: "top",
-                  position: "center",
-                  backgroundColor: "#007bff",
-                }).showToast();
-              });
-            </script>
+                <time datetime="1982-06-23">September 10, 2001</time>
+              </div>
+            </li>
 
-          </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
 
-          <li class="contact-item">
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
 
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
+                <address>Bohol, Philippines</address>
+              </div>
+            </li>
+          </ul>
 
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
+          <div class="separator"></div>
 
-              <a href="tel:+12133522795" class="contact-link">+639 85 254 1182</a>
-            </div>
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.facebook.com/claretelloydiee/"
+                class="social-link"
+                target="_blank"
+              >
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
 
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">September 10, 2001</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Bohol, Philippines</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.facebook.com/claretelloydiee/" class="social-link" target="_blank">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <!-- <li class="social-item">
+            <!-- <li class="social-item">
             <a href="#" class="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li> -->
 
-          <li class="social-item">
-            <a href="https://www.instagram.com/claretelloydiee/?hl=en" class="social-link" target="_blank">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
+            <li class="social-item">
+              <a
+                href="https://www.instagram.com/claretelloydiee/?hl=en"
+                class="social-link"
+                target="_blank"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
+      <!--
       - #main-content
     -->
 
-    <div class="main-content">
-
-      <!--
+      <div class="main-content">
+        <!--
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
 
-        <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
 
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-          
-          <!-- <li class="navbar-item">
+            <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
           </li> -->
+          </ul>
+        </nav>
 
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
+        <!--
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
+          <section class="about-text">
+            <p>
+              I'm a Graphic Designer and Video Editor from Bohol, Philippines,
+              specializing in 2D designs and video editing. I like to
+              communicate through my designs.
+            </p>
 
-        <section class="about-text">
-          <p>
-            I'm a Graphic Designer and Video Editor from Bohol, Philippines, specializing in 2D designs and video editing.
-            I like to communicate through my designs.</p>
+            <p></p>
+            <p>
+              My job is to design visually striking and functional content for
+              social media. I ensure your product or company stands out and
+              effectively communicates it's message. By adding a personal touch,
+              I make the design eye-catching and intuitive. My goal is to
+              express your message and identity in the most creative way.
+            </p>
+          </section>
 
-          <p>
-          <p>
-            My job is to design visually striking and functional content for social media. I ensure your product or company
-            stands out and effectively communicates it's message. By adding a personal touch, I make the design eye-catching and
-            intuitive. My goal is to express your message and identity in the most creative way.
-          </p>
-
-        </section>
-
-
-        <!--
+          <!--
           - service
         -->
 
-        <section class="service">
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
 
-          <ul class="service-list">
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Graphics Design</h4>
 
-            <li class="service-item">
+                  <p class="service-item-text">
+                    The most modern and high-quality design made at a
+                    professional level.
+                  </p>
+                </div>
+              </li>
 
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-3d.svg"
+                    alt="3d Model icon"
+                    width="40"
+                  />
+                </div>
 
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Graphics Design</h4>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">3d Modelling</h4>
 
-                <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
-                </p>
-              </div>
+                  <p class="service-item-text">
+                    High-quality 3d models, good for your assets.
+                  </p>
+                </div>
+              </li>
 
-            </li>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-video.svg"
+                    alt="video edit icon"
+                    width="40"
+                  />
+                </div>
 
-            <li class="service-item">
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Video Editing</h4>
 
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-3d.svg" alt="3d Model icon" width="40">
-              </div>
+                  <p class="service-item-text">
+                    Professional in crafting best quality video edits,
+                    specializing short-forms video.
+                  </p>
+                </div>
+              </li>
 
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">3d Modelling</h4>
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-paint.svg"
+                    alt="paint icon"
+                    width="35"
+                  />
+                </div>
 
-                <p class="service-item-text">
-                  High-quality 3d models, good for your assets.
-                </p>
-              </div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Digital Painting</h4>
 
-            </li>
+                  <p class="service-item-text">
+                    I make high-quality photos through digital painting.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
 
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-video.svg" alt="video edit icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Video Editing</h4>
-
-                <p class="service-item-text">
-                  Professional in crafting best quality video edits, specializing short-forms video.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-paint.svg" alt="paint icon" width="35">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Digital Painting</h4>
-
-                <p class="service-item-text">
-                  I make high-quality photos through digital painting.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
+          <!--
           - testimonials
         -->
 
-        <section class="testimonials">
+          <section class="testimonials">
+            <h3 class="h3 testimonials-title">Testimonials</h3>
 
-          <h3 class="h3 testimonials-title">Testimonials</h3>
+            <ul class="testimonials-list has-scrollbar">
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/avatar-1.png"
+                      alt="Daniel lewis"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
 
-          <ul class="testimonials-list has-scrollbar">
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Benedict
+                  </h4>
 
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Benedict</h4>
-                
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                Collaborating with you Lloyd was an amazing experience. Their creativity and attention to detail in graphic design
-                truly brought our restaurnt's sbrand to life. I highly recommend their services for anyone looking to enhance their visual content.
-                  </p>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Collaborating with you Lloyd was an amazing experience.
+                      Their creativity and attention to detail in graphic design
+                      truly brought our restaurnt's sbrand to life. I highly
+                      recommend their services for anyone looking to enhance
+                      their visual content.
+                    </p>
+                  </div>
                 </div>
+              </li>
 
-              </div>
-            </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/avatar-2.png"
+                      alt="Jessica miller"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
 
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Sarah Lee
+                  </h4>
 
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Sarah Lee</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                  He took my ideas and transformed them into visuals that surpassed my expectations. The short-form video ads LLoyd
-                  created were not only visually stunning but also deeply impactful, connecting with our audience on a personal level and
-                  boosting our online presence significantly. We're truly grateful for their expertise.
-                  </p>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      He took my ideas and transformed them into visuals that
+                      surpassed my expectations. The short-form video ads LLoyd
+                      created were not only visually stunning but also deeply
+                      impactful, connecting with our audience on a personal
+                      level and boosting our online presence significantly.
+                      We're truly grateful for their expertise.
+                    </p>
+                  </div>
                 </div>
+              </li>
 
-              </div>
-            </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/avatar-4.png"
+                      alt="Emily evans"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
 
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Mark Davis
+                  </h4>
 
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Mark Davis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                  When we hired Lloyd to revamp our brand visuals, we knew we were in good hands. Their designs are not only
-                  beautiful but also authentic to our brand's identity. The short-form video ads they produced were nothing short of
-                  brilliant, capturing the essence of our message and sparking meaningful conversations online. Lloyd has a gift for
-                  bringing stories to life visually, and we couldn't be happier with the results.
-                  </p>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      When we hired Lloyd to revamp our brand visuals, we knew
+                      we were in good hands. Their designs are not only
+                      beautiful but also authentic to our brand's identity. The
+                      short-form video ads they produced were nothing short of
+                      brilliant, capturing the essence of our message and
+                      sparking meaningful conversations online. Lloyd has a gift
+                      for bringing stories to life visually, and we couldn't be
+                      happier with the results.
+                    </p>
+                  </div>
                 </div>
+              </li>
+            </ul>
+          </section>
 
-              </div>
-            </li>
-          </ul>
-
-        </section>
-
-
-        <!--
+          <!--
           - testimonials modal
         -->
 
-        <div class="modal-container" data-modal-container>
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
 
-          <div class="overlay" data-overlay></div>
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
 
-          <section class="testimonials-modal">
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img
+                    src="./assets/images/avatar-1.png"
+                    alt="Daniel lewis"
+                    width="80"
+                    data-modal-img
+                  />
+                </figure>
 
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
+                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
               </div>
 
-            </div>
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
-          </section>
+                <time datetime="2021-06-14">14 June, 2021</time>
 
-        </div>
+                <div data-modal-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were
+                    very pleased with the work done. She has a lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum
+                    dolor sit amet, ullamcous cididt consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels
+                    dolore magnarels alia.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
 
-        <!--
+          <!--
           - softwares
         -->
-        
-        <section class="softwares">
-          
-          <h3 class="h3 software-title">Softwares Used</h3>
-          
-          <ul class="software-list has-scrollbar">
 
-            <li class="software-item">
-                <img src="./assets/images/PS.png" alt="client logo"  >
-            </li>
+          <section class="softwares">
+            <h3 class="h3 software-title">Softwares Used</h3>
 
-            <li class="software-item">
-                <img src="./assets/images/icons8-illustrator-96.png" alt="client logo" >
-            </li>
-            
-            <li class="software-item">
-                <img src="./assets/images/icons8-adobe-premiere-pro-96.png" alt="client logo">
-            </li>
-            
-            <li class="software-item">
-                <img src="./assets/images/icons8-adobe-after-effects-96.png" alt="client logo">
-            </li>
-            
-            <li class="software-item">
-                <img src="./assets/images/icon-blender.png" alt="client logo">
-            </li>
-            
-            <li class="software-item">
-                <img src="./assets/images/icons8-vs-code-96.png" alt="client logo">
-            </li>
-            
-            <li class="software-item">
-                <img src="./assets/images/icons8-unity-50.png" alt="client logo" style="filter:invert(70%)">
-            </li>
-            
-          </ul>
-          
-        </section>
-        
-  
+            <ul class="software-list has-scrollbar">
+              <li class="software-item">
+                <img src="./assets/images/PS.png" alt="client logo" />
+              </li>
+
+              <li class="software-item">
+                <img
+                  src="./assets/images/icons8-illustrator-96.png"
+                  alt="client logo"
+                />
+              </li>
+
+              <li class="software-item">
+                <img
+                  src="./assets/images/icons8-adobe-premiere-pro-96.png"
+                  alt="client logo"
+                />
+              </li>
+
+              <li class="software-item">
+                <img
+                  src="./assets/images/icons8-adobe-after-effects-96.png"
+                  alt="client logo"
+                />
+              </li>
+
+              <li class="software-item">
+                <img src="./assets/images/icon-blender.png" alt="client logo" />
+              </li>
+
+              <li class="software-item">
+                <img
+                  src="./assets/images/icons8-vs-code-96.png"
+                  alt="client logo"
+                />
+              </li>
+
+              <li class="software-item">
+                <img
+                  src="./assets/images/icons8-unity-50.png"
+                  alt="client logo"
+                  style="filter: invert(70%)"
+                />
+              </li>
+            </ul>
+          </section>
+
           <!--
             - clients
           -->
-  
+
           <!-- <section class="clients">
   
             <h3 class="h3 clients-title"></h3>
@@ -499,975 +539,1187 @@
             </ul>
   
           </section>  -->
-                
-      </article>
+        </article>
 
-
-
-
-
-      <!--
+        <!--
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
 
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <h3 class="h3">Personal Information</h3>
             </div>
 
-            <h3 class="h3">Education</h3>
-          </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Gender <span style="font-weight: normal">Male</span>
+                </h4>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Age <span style="font-weight: normal">23</span>
+                </h4>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Date of Birth
+                  <span style="font-weight: normal">September 10, 2001</span>
+                </h4>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Address
+                  <span style="font-weight: normal"
+                    >Poblacion, Dauis, Bohol</span
+                  >
+                </h4>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Nationality <span style="font-weight: normal">Filipino</span>
+                </h4>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Religion
+                  <span style="font-weight: normal">Roman Catholic</span>
+                </h4>
+              </li>
+            </ol>
+          </section>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
 
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University  of San Jose-Recoletos</h4>
-
-              <span>2020 — 2024</span>
-
-              <p class="timeline-text">
-              Bachelor of Science in Entertainment and Multimedia and Computing
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Holy Name University</h4>
-
-              <span>2019 — 2020</span>
-
-              <p class="timeline-text">
-               Senior High School
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Holy Name University</h4>
-
-              <span>2015 — 2018</span>
-
-              <p class="timeline-text">
-                High School
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <h3 class="h3">Education</h3>
             </div>
 
-            <h3 class="h3">Experience</h3>
-          </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  University of San Jose-Recoletos
+                </h4>
 
-          <ol class="timeline-list">
+                <span>2020 — 2024</span>
 
-            <li class="timeline-item">
+                <p class="timeline-text">
+                  Bachelor of Science in Entertainment and Multimedia and
+                  Computing
+                </p>
+              </li>
 
-              <h4 class="h4 timeline-item-title">Social Media Manager</h4>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Holy Name University</h4>
 
-              <span>2020 — Present</span>
+                <span>2019 — 2020</span>
 
-              <p class="timeline-text">
-                Social Media Posting, Printable Files, and Menus at STK Restaurnt.
-              </p>
+                <p class="timeline-text">Senior High School</p>
+              </li>
 
-            </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Holy Name University</h4>
 
-            <li class="timeline-item">
+                <span>2015 — 2018</span>
 
-              <h4 class="h4 timeline-item-title">Short-Form Video Editor</h4>
+                <p class="timeline-text">High School</p>
+              </li>
+            </ol>
+          </section>
 
-              <span>2022 — 2023</span>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
 
-              <p class="timeline-text">
-                Promoting products through video advertisements at Pear Apple.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Logo Design</h4>
-
-              <span>2021</span>
-
-              <p class="timeline-text">
-                Education Owl for Blueprint Masterminds company.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <h3 class="h3">Experience</h3>
             </div>
 
-            <h3 class="h3">Social Affiliations</h3>
-          </div>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Social Media Manager</h4>
 
-          <ol class="timeline-list">
+                <span>2020 — Present</span>
 
-            <li class="timeline-item">
+                <p class="timeline-text">
+                  Social Media Posting, Printable Files, and Menus at STK
+                  Restaurnt.
+                </p>
+              </li>
 
-              <h4 class="h4 timeline-item-title">Graphic Designer</h4>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Short-Form Video Editor</h4>
 
-              <span>2022 — 2023</span>
+                <span>2022 — 2023</span>
 
-              <p class="timeline-text">
-                  Outstanding Service as a graphic designer of The Cebu Schools Athletic Foundation, Inc.
-                  (CESAFI)              
-            </p>
+                <p class="timeline-text">
+                  Promoting products through video advertisements at Pear Apple.
+                </p>
+              </li>
 
-            </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Logo Design</h4>
 
-            <li class="timeline-item">
+                <span>2021</span>
 
-              <h4 class="h4 timeline-item-title">Graphic Designer</h4>
+                <p class="timeline-text">
+                  Education Owl for Blueprint Masterminds company.
+                </p>
+              </li>
+            </ol>
+          </section>
 
-              <span>2022 — 2023</span>
-
-              <p class="timeline-text">
-                Outstanding Service as a graphic designer of USJ-R Jaguar Esports.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Poster Making Contest</h4>
-
-              <span>2023</span>
-
-              <p class="timeline-text">
-                Participant in Poster Making Contest for Permaculture Research PH.
-              </p>
-
-            </li>
-            
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">3d Modelling Contest</h4>
-
-              <span>2022</span>
-
-              <p class="timeline-text">
-                Participant in 3D Modeling Contest University of San Jose-Recoletos
-              </p>
-
-            </li>
-            
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Game Jam</h4>
-
-              <span>2022</span>
-
-              <p class="timeline-text">
-                Participant in Game Jam University of San Jose-Recoletos
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphics Design</h5>
-                <data value="90">90%</data>
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
               </div>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
+              <h3 class="h3">Social Affiliations</h3>
+            </div>
 
-            </li>
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Graphic Designer</h4>
 
-            <li class="skills-item">
+                <span>2022 — 2023</span>
 
-              <div class="title-wrapper">
-                <h5 class="h5">Video Editing</h5>
-                <data value="70">70%</data>
-              </div>
+                <p class="timeline-text">
+                  Outstanding Service as a graphic designer of The Cebu Schools
+                  Athletic Foundation, Inc. (CESAFI)
+                </p>
+              </li>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Graphic Designer</h4>
 
-            </li>
+                <span>2022 — 2023</span>
 
-            <li class="skills-item">
+                <p class="timeline-text">
+                  Outstanding Service as a graphic designer of USJ-R Jaguar
+                  Esports.
+                </p>
+              </li>
 
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="80">80%</data>
-              </div>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Poster Making Contest</h4>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
+                <span>2023</span>
 
-            </li>
+                <p class="timeline-text">
+                  Participant in Poster Making Contest for Permaculture Research
+                  PH.
+                </p>
+              </li>
 
-            <li class="skills-item">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">3d Modelling Contest</h4>
 
-              <div class="title-wrapper">
-                <h5 class="h5">3d Modeling</h5>
-                <data value="60">60%</data>
-              </div>
+                <span>2022</span>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
+                <p class="timeline-text">
+                  Participant in 3D Modeling Contest University of San
+                  Jose-Recoletos
+                </p>
+              </li>
 
-            </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Game Jam</h4>
 
-          </ul>
+                <span>2022</span>
 
-        </section>
+                <p class="timeline-text">
+                  Participant in Game Jam University of San Jose-Recoletos
+                </p>
+              </li>
+            </ol>
+          </section>
 
-      </article>
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
 
+            <ul class="skills-list content-card">
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Graphics Design</h5>
+                  <data value="90">90%</data>
+                </div>
 
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+              </li>
 
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Video Editing</h5>
+                  <data value="70">70%</data>
+                </div>
 
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
 
-      <!--
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Branding</h5>
+                  <data value="80">80%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">3d Modeling</h5>
+                  <data value="60">60%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 60%"></div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Graphics Design</button>
-            </li>
-
-            
-            <li class="filter-item">
-              <button data-filter-btn>Logo Design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>3D Design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Digital Art</button>
-            </li>
-            
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
               </li>
 
-              <li class="select-item">
-                <button data-select-item>Graphics Design</button>
-              </li>
-              
-              <li class="select-item">
-                <button data-select-item>Logo Design</button>
-              </li>
-              
-              <li class="select-item">
-                <button data-select-item>3D Design</button>
+              <li class="filter-item">
+                <button data-filter-btn>Graphics Design</button>
               </li>
 
-              <li class="select-item">
-                <button data-select-item>Digital Art</button>
+              <li class="filter-item">
+                <button data-filter-btn>Logo Design</button>
               </li>
 
-              
+              <li class="filter-item">
+                <button data-filter-btn>3D Design</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Digital Art</button>
+              </li>
             </ul>
 
-          </div>
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
 
-        <ul class="project-list">
-        
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
 
-           
-            
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/New/Post 1.jpg" target="_blank">
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
+                <li class="select-item">
+                  <button data-select-item>Graphics Design</button>
+                </li>
 
-                  <img src="./assets/images/GraphicsDesign/New/Post 1.jpg" alt="post" loading="lazy">
-                </figure>
+                <li class="select-item">
+                  <button data-select-item>Logo Design</button>
+                </li>
 
-                <h3 class="project-title">E-Sports Tournament</h3>
+                <li class="select-item">
+                  <button data-select-item>3D Design</button>
+                </li>
 
-                <p class="project-category">Graphics Game like deisgn </p>
+                <li class="select-item">
+                  <button data-select-item>Digital Art</button>
+                </li>
+              </ul>
+            </div>
 
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/New/Post 2.jpg" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/GraphicsDesign/New/Post 2.jpg" alt="post" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Team Recruitment Post</h3>
-
-                <p class="project-category">Graphics deisgn </p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/New/Post 3.jpg" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/GraphicsDesign/New/Post 3.jpg" alt="post" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Product Posting</h3>
-
-                <p class="project-category">Promoting Product through Social Media </p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/New/Brochures Main Pgae.png" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/GraphicsDesign/New/Brochures Main Pgae.png"alt="post" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brochure</h3>
-
-                <p class="project-category">USJR brochure</p>
-
-              </a>
-            </li>
-
-              <li class="project-item  active" data-filter-item data-category="graphics design">
-                <a href="./assets/images/GraphicsDesign/166.png" target="_blank">
-              
+            <ul class="project-list">
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Post 1.jpg"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/166.png" alt="post" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Post 1.jpg"
+                      alt="post"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
+                  <h3 class="project-title">E-Sports Tournament</h3>
+
+                  <p class="project-category">Graphics Game like deisgn</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Post 2.jpg"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Post 2.jpg"
+                      alt="post"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Team Recruitment Post</h3>
+
+                  <p class="project-category">Graphics deisgn</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Post 3.jpg"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Post 3.jpg"
+                      alt="post"
+                      loading="lazy"
+                    />
+                  </figure>
+
                   <h3 class="project-title">Product Posting</h3>
-              
-                  <p class="project-category">Instagram Posting</p>
-              
+
+                  <p class="project-category">
+                    Promoting Product through Social Media
+                  </p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Brochures Main Pgae.png"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Brochures Main Pgae.png"
+                      alt="post"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Brochure</h3>
+
+                  <p class="project-category">USJR brochure</p>
                 </a>
               </li>
 
-
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/New/mother'sday.jpg" target="_blank">
-            
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-            
-                  <img src="./assets/images/GraphicsDesign/New/mother'sday.jpg" alt="mother's_day" loading="lazy">
-                </figure>
-            
-                <h3 class="project-title">Mother's Day Special Touch</h3>
-                <p class="project-category">Social Media Post</p>
-              </a>
-            </li>
-            
-            
-            
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/preview ANNOUNCEMENT.png" target="_blank">
-                
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/GraphicsDesign/preview ANNOUNCEMENT.png" alt="post" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">E-Sports</h3>
-
-                <p class="project-category">Graphics Deisgn</p>
-                
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="graphics design">
-              <a href="./assets/images/GraphicsDesign/Specials 1.png" target="_blank">
-            
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-            
-                  <img src="./assets/images/GraphicsDesign/Specials 1.png" alt="post" loading="lazy">
-                </figure>
-            
-                <h3 class="project-title">Food Specials</h3>
-            
-                <p class="project-category">Graphics Deisgn</p>
-            
-              </a>
-            </li>
-            
-          
-
-
-              <li class="project-item  active" data-filter-item data-category="web design">
-                <a href="./assets/images/GraphicsDesign/full page.png" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/166.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/full page.png" alt="mother's_day" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/166.png"
+                      alt="post"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
+                  <h3 class="project-title">Product Posting</h3>
+
+                  <p class="project-category">Instagram Posting</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/mother'sday.jpg"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/mother'sday.jpg"
+                      alt="mother's_day"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Mother's Day Special Touch</h3>
+                  <p class="project-category">Social Media Post</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/preview ANNOUNCEMENT.png"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/preview ANNOUNCEMENT.png"
+                      alt="post"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">E-Sports</h3>
+
+                  <p class="project-category">Graphics Deisgn</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="graphics design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/Specials 1.png"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/Specials 1.png"
+                      alt="post"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Food Specials</h3>
+
+                  <p class="project-category">Graphics Deisgn</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/full page.png"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/full page.png"
+                      alt="mother's_day"
+                      loading="lazy"
+                    />
+                  </figure>
+
                   <h3 class="project-title">Google Restaurant Homepage</h3>
                   <p class="project-category">Web Design</p>
                 </a>
               </li>
-             
-              <li class="project-item  active" data-filter-item data-category="logo design">
-                <a href="./assets/images/GraphicsDesign/New/heavyduty.jpg" target="_blank">
-              
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="logo design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/heavyduty.jpg"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/heavyduty.jpg" alt="Excavator" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/heavyduty.jpg"
+                      alt="Excavator"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">Heavy Diesel Company</h3>
-                  <p class="project-category">Logo Competition </p>
+                  <p class="project-category">Logo Competition</p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="logo design">
-                <a href="./assets/images/GraphicsDesign/New/2.png" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="logo design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/2.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/4.jpg" alt="shopify logo" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/4.jpg"
+                      alt="shopify logo"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">E-Commerce Logo</h3>
-                  <p class="project-category">Logo Design </p>
+                  <p class="project-category">Logo Design</p>
                 </a>
               </li>
-             
-              <li class="project-item  active" data-filter-item data-category="logo design">
-                <a href="./assets/images/GraphicsDesign/New/owl teacher logo.jpg" target="_blank">
-              
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="logo design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/owl teacher logo.jpg"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/owl teacher logo.jpg" alt="owl book logo" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/owl teacher logo.jpg"
+                      alt="owl book logo"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">Owl Teacher Book</h3>
                   <p class="project-category">Logo Cover Design</p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="3d design">
-                <a href="./assets/images/GraphicsDesign/3d/bumblebee rendered.png" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="3d design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/3d/bumblebee rendered.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/3d/bumblebee rendered.png" alt="bumblebee" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/3d/bumblebee rendered.png"
+                      alt="bumblebee"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">Bumblebee Model</h3>
-                  <p class="project-category">3d Modelling </p>
-                </a>
-              </li>
-              
-              <li class="project-item  active" data-filter-item data-category="3d design">
-                <a href="./assets/images/GraphicsDesign/3d/rendered.png" target="_blank">
-              
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-              
-                    <img src="./assets/images/GraphicsDesign/3d/rendered.png" alt="fire extinguisher" loading="lazy">
-                  </figure>
-              
-                  <h3 class="project-title">Fire Extinguisher Model</h3>
-                  <p class="project-category">3d Modelling </p>
-                </a>
-              </li>
-              
-              <li class="project-item  active" data-filter-item data-category="3d design">
-                <a href="./assets/images/GraphicsDesign/3d/Interior.jpg" target="_blank">
-              
-                  <figure class="project-img">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-              
-                    <img src="./assets/images/GraphicsDesign/3d/Interior.jpg" alt="interior design" loading="lazy" class = "interior">
-                  </figure>
-              
-                  <h3 class="project-title">Simple Interior Design</h3>
-                  <p class="project-category">Lighting and Objects </p>
+                  <p class="project-category">3d Modelling</p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="3d design">
-                <a href="./assets/images/GraphicsDesign/New/DDFSF.jpg" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="3d design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/3d/rendered.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/DDFSF.jpg" alt="AR Face Filter" loading="lazy" class="interior">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/3d/rendered.png"
+                      alt="fire extinguisher"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
+                  <h3 class="project-title">Fire Extinguisher Model</h3>
+                  <p class="project-category">3d Modelling</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="3d design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/3d/Interior.jpg"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/3d/Interior.jpg"
+                      alt="interior design"
+                      loading="lazy"
+                      class="interior"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Simple Interior Design</h3>
+                  <p class="project-category">Lighting and Objects</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="3d design"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/DDFSF.jpg"
+                  target="_blank"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/DDFSF.jpg"
+                      alt="AR Face Filter"
+                      loading="lazy"
+                      class="interior"
+                    />
+                  </figure>
+
                   <h3 class="project-title">AR Joker Mask</h3>
                   <p class="project-category">Model & Coded</p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="digital art">
-                <a href="./assets/images/GraphicsDesign/Digital Art/For Her.jpg" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="digital art"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/Digital Art/For Her.jpg"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/Digital Art/For Her.jpg" alt="for her art" loading="lazy" >
+
+                    <img
+                      src="./assets/images/GraphicsDesign/Digital Art/For Her.jpg"
+                      alt="for her art"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">City Girl</h3>
-                  <p class="project-category">Digital Painting & Color Experimentation </p>
+                  <p class="project-category">
+                    Digital Painting & Color Experimentation
+                  </p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="digital art">
-                <a href="./assets/images/GraphicsDesign/New/Artboard 4.png" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="digital art"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Artboard 4.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/Artboard 4.png" alt="for her art" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Artboard 4.png"
+                      alt="for her art"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">Chopper</h3>
-                  <p class="project-category">Digital Painting & Color Experimentation </p>
+                  <p class="project-category">
+                    Digital Painting & Color Experimentation
+                  </p>
                 </a>
               </li>
 
-              <li class="project-item  active" data-filter-item data-category="digital art">
-                <a href="./assets/images/GraphicsDesign/New/Artboard 2.png" target="_blank">
-              
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="digital art"
+              >
+                <a
+                  href="./assets/images/GraphicsDesign/New/Artboard 2.png"
+                  target="_blank"
+                >
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-              
-                    <img src="./assets/images/GraphicsDesign/New/Artboard 2.png" alt="for her art" loading="lazy">
+
+                    <img
+                      src="./assets/images/GraphicsDesign/New/Artboard 2.png"
+                      alt="for her art"
+                      loading="lazy"
+                    />
                   </figure>
-              
+
                   <h3 class="project-title">Ornella</h3>
-                  <p class="project-category">Digital Painting & Color Experimentation </p>
+                  <p class="project-category">
+                    Digital Painting & Color Experimentation
+                  </p>
                 </a>
               </li>
-          </ul>
+            </ul>
+          </section>
+        </article>
 
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
+        <!--
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+        <article class="blog" data-page="blog">
+          <header>
+            <h2 class="h2 article-title">Blog</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-1.jpg"
+                      alt="Design conferences in 2022"
+                      loading="lazy"
+                    />
+                  </figure>
 
-        <section class="blog-posts">
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-          <ul class="blog-posts-list">
+                      <span class="dot"></span>
 
-            <li class="blog-post-item">
-              <a href="#">
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
+                    <h3 class="h3 blog-item-title">
+                      Design conferences in 2022
+                    </h3>
 
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Veritatis et quasi architecto beatae vitae dicta sunt,
+                      explicabo.
+                    </p>
                   </div>
+                </a>
+              </li>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-2.jpg"
+                      alt="Best fonts every designer"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-                </div>
+                      <span class="dot"></span>
 
-              </a>
-            </li>
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+                    <h3 class="h3 blog-item-title">
+                      Best fonts every designer
+                    </h3>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Sed ut perspiciatis, nam libero tempore, cum soluta nobis
+                      est eligendi.
+                    </p>
                   </div>
+                </a>
+              </li>
 
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-3.jpg"
+                      alt="Design digest #80"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-                </div>
+                      <span class="dot"></span>
 
-              </a>
-            </li>
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+                    <h3 class="h3 blog-item-title">Design digest #80</h3>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Excepteur sint occaecat cupidatat no proident, quis
+                      nostrum exercitationem ullam corporis suscipit.
+                    </p>
                   </div>
+                </a>
+              </li>
 
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-4.jpg"
+                      alt="UI interactions of the week"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-                </div>
+                      <span class="dot"></span>
 
-              </a>
-            </li>
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+                    <h3 class="h3 blog-item-title">
+                      UI interactions of the week
+                    </h3>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Enim ad minim veniam, consectetur adipiscing elit, quis
+                      nostrud exercitation ullamco laboris nisi.
+                    </p>
                   </div>
+                </a>
+              </li>
 
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-5.jpg"
+                      alt="The forgotten art of spacing"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-                </div>
+                      <span class="dot"></span>
 
-              </a>
-            </li>
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+                    <h3 class="h3 blog-item-title">
+                      The forgotten art of spacing
+                    </h3>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Maxime placeat, sed do eiusmod tempor incididunt ut labore
+                      et dolore magna aliqua.
+                    </p>
                   </div>
+                </a>
+              </li>
 
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+              <li class="blog-post-item">
+                <a href="#">
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog-6.jpg"
+                      alt="Design digest #79"
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Design</p>
 
-                </div>
+                      <span class="dot"></span>
 
-              </a>
-            </li>
+                      <time datetime="2022-02-23">Fab 23, 2022</time>
+                    </div>
 
-            <li class="blog-post-item">
-              <a href="#">
+                    <h3 class="h3 blog-item-title">Design digest #79</h3>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <p class="blog-text">
+                      Optio cumque nihil impedit uo minus quod maxime placeat,
+                      velit esse cillum.
+                    </p>
                   </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
 
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
+        <!--
         - #CONTACT
       -->
 
-      <article class="contact" data-page="contact">
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
 
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7866.92220214057!2d123.85576951749152!3d9.641583961625694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4db64f0e3d1b%3A0x6e38906d64165925!2sPoblacion%20III%2C%20Tagbilaran%20City%2C%20Bohol!5e0!3m2!1sen!2sph!4v1721001554584!5m2!1sen!2sph"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </figure>
+          </section>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7866.92220214057!2d123.85576951749152!3d9.641583961625694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aa4db64f0e3d1b%3A0x6e38906d64165925!2sPoblacion%20III%2C%20Tagbilaran%20City%2C%20Bohol!5e0!3m2!1sen!2sph!4v1721001554584!5m2!1sen!2sph"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </figure>
-        </section>
+          <section class="contact-form" style="align-items: center">
+            <h3 class="h3 form-title" style="text-align: center">Contact Me</h3>
 
-        <section class="contact-form" style="align-items: center;">
+            <form
+              class="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="14783f2d-1eb0-4995-8f68-1722cd3235e6"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="Ready to Turn Your Ideas into Reality!"
+              />
+              <input
+                type="hidden"
+                name="from_name"
+                value="Your Next Project Awaits"
+              />
 
-      <h3 class="h3 form-title" style="text-align: center;">Contact Me</h3>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Full name"
+                  required
+                  data-form-input
+                />
+              </div>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Your email"
+                  required
+                  data-form-input
+                />
+              </div>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="Phone (Optional) +63"
+                  required
+                  data-form-input
+                />
+              </div>
+              <textarea
+                name="message"
+                class="form-input"
+                id="message"
+                placeholder="Your message"
+                required
+                data-form-input
+              ></textarea>
 
-          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <button class="form-btn" type="submit">
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
 
-            <input type="hidden" name="access_key" value="14783f2d-1eb0-4995-8f68-1722cd3235e6" />
-            <input type="hidden" name="subject" value="Ready to Turn Your Ideas into Reality!" />
-            <input type="hidden" name="from_name" value="Your Next Project Awaits" />
-             
-            <div class="input-wrapper">
-              <input type="text" id="name" name="name" class="form-input" placeholder="Full name" required data-form-input />  
-            </div>
-            <div class="input-wrapper">
-            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required data-form-input />
-            </div>
-            <div class="input-wrapper">
-            <input type="text" id="phone" name="phone" class="form-input" placeholder="Phone (Optional) +63" required data-form-input />
-            </div>
-            <textarea name="message" class="form-input"  id="message"  placeholder="Your message" required data-form-input></textarea>
-            
-            <button class="form-btn" type="submit" >
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.facebook.com/claretelloydiee/"
+                class="social-link"
+                target="_blank"
+                style="font-size: 50px"
+              >
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
 
-          </form>
-
-        </section>
-        
-        <ul class="social-list" >
-        
-          <li class="social-item">
-            <a href="https://www.facebook.com/claretelloydiee/" class="social-link" target="_blank" style="font-size: 50px;">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-        
-          <!-- <li class="social-item">
+            <!-- <li class="social-item">
                     <a href="#" class="social-link">
                       <ion-icon name="logo-twitter"></ion-icon>
                     </a>
                   </li> -->
-        
-          <li class="social-item">
-            <a href="https://www.instagram.com/claretelloydiee/?hl=en" class="social-link" target="_blank" style="font-size: 50px;">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        
-        </ul>
-        
-        
 
-      </article>
-      
-<p class="testimonials-text" style="text-align: center; margin:10px">made by codewithsadee</p>
+            <li class="social-item">
+              <a
+                href="https://www.instagram.com/claretelloydiee/?hl=en"
+                class="social-link"
+                target="_blank"
+                style="font-size: 50px"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </article>
 
-    </div>
+        <p class="testimonials-text" style="text-align: center; margin: 10px">
+          made by codewithsadee
+        </p>
+      </div>
+    </main>
 
-  </main>
-
-
-
-
-
-
-  <!--
+    <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 
-  <!--
+    <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

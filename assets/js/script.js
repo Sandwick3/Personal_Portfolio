@@ -1,45 +1,52 @@
-'use strict';
+"use strict";
 
 // Clipboard copy function
 const copyToClipboard = function (text) {
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() {
-            showToast('Email copied to clipboard!');
-        }).catch(function() {
-            showToast('Failed to copy email.');
-        });
-    } else {
-        // Fallback for older browsers
-        const input = document.createElement('input');
-        input.value = text;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-        showToast('Email copied to clipboard!');
-    }
+  if (navigator.clipboard) {
+    navigator.clipboard
+      .writeText(text)
+      .then(function () {
+        showToast("Email copied to clipboard!");
+      })
+      .catch(function () {
+        showToast("Failed to copy email.");
+      });
+  } else {
+    // Fallback for older browsers
+    const input = document.createElement("input");
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    showToast("Email copied to clipboard!");
+  }
 };
 
 // Toastify show function
-const showToast = function(message) {
-    Toastify({
-        text: message,
-        duration: 1500,
-        gravity: "top",
-        position: "center",
-        backgroundColor: "#007bff",
-    }).showToast();
+const showToast = function (message) {
+  Toastify({
+    text: message,
+    duration: 1500,
+    gravity: "top",
+    position: "center",
+    backgroundColor: "#007bff",
+  }).showToast();
 };
 
 // Element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); };
+const elementToggleFunc = function (elem) {
+  elem.classList.toggle("active");
+};
 
 // Sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // Sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+sidebarBtn.addEventListener("click", function () {
+  elementToggleFunc(sidebar);
+});
 
 // Testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -63,8 +70,12 @@ for (let i = 0; i < testimonialsItem.length; i++) {
   testimonialsItem[i].addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    modalTitle.innerHTML = this.querySelector(
+      "[data-testimonials-title]"
+    ).innerHTML;
+    modalText.innerHTML = this.querySelector(
+      "[data-testimonials-text]"
+    ).innerHTML;
 
     testimonialsModalFunc();
   });
@@ -77,10 +88,12 @@ overlay.addEventListener("click", testimonialsModalFunc);
 // Custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+select.addEventListener("click", function () {
+  elementToggleFunc(this);
+});
 
 // Add event to all select items
 for (let i = 0; i < selectItems.length; i++) {
@@ -123,48 +136,50 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 // Form submission
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector("[data-form]");
-    const formInputs = document.querySelectorAll("[data-form-input]");
-    const formBtn = document.querySelector("[data-form-btn]");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("[data-form]");
+  const formInputs = document.querySelectorAll("[data-form-input]");
+  const formBtn = document.querySelector("[data-form-btn]");
 
-    // Add event listener to form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+  // Add event listener to form submission
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        // Collect form data
-        const formData = new FormData(form);
+    // Collect form data
+    const formData = new FormData(form);
 
-        // Send form data to send_email.php using fetch API
-        fetch('send_email.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Form submitted successfully.');
-                form.reset(); // Optionally reset the form after successful submission
-            } else {
-                throw new Error('Form submission failed.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting the form. Please try again later.');
-        });
+    // Send form data to send_email.php using fetch API
+    fetch("send_email.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Form submitted successfully.");
+          form.reset(); // Optionally reset the form after successful submission
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert(
+          "There was an error submitting the form. Please try again later."
+        );
+      });
+  });
+
+  // Enable submit button when all required fields are filled
+  form.addEventListener("input", function () {
+    const inputs = form.querySelectorAll("[data-form-input]");
+    let isValid = true;
+    inputs.forEach((input) => {
+      if (input.value.trim() === "") {
+        isValid = false;
+      }
     });
-
-    // Enable submit button when all required fields are filled
-    form.addEventListener('input', function() {
-        const inputs = form.querySelectorAll('[data-form-input]');
-        let isValid = true;
-        inputs.forEach(input => {
-            if (input.value.trim() === '') {
-                isValid = false;
-            }
-        });
-        formBtn.disabled = !isValid;
-    });
+    formBtn.disabled = !isValid;
+  });
 });
 
 // Page navigation variables
@@ -175,15 +190,15 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
     // Remove active class from all links and pages
-    navigationLinks.forEach(link => link.classList.remove("active"));
-    pages.forEach(page => page.classList.remove("active"));
+    navigationLinks.forEach((link) => link.classList.remove("active"));
+    pages.forEach((page) => page.classList.remove("active"));
 
     // Add active class to the clicked link
     this.classList.add("active");
 
     // Find the matching page and add active class to it
     const selectedPage = this.innerHTML.toLowerCase();
-    pages.forEach(page => {
+    pages.forEach((page) => {
       if (page.dataset.page === selectedPage) {
         page.classList.add("active");
       }
@@ -198,7 +213,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
 const copyEmailBtn = document.querySelector("[data-copy-email-btn]");
 
 if (copyEmailBtn) {
-    copyEmailBtn.addEventListener("click", function () {
-        copyToClipboard('claretelloydiee@gmail.com');
-    });
+  copyEmailBtn.addEventListener("click", function () {
+    copyToClipboard("claretelloydiee@gmail.com");
+  });
 }
+
+// Load the last visited page from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const savedPage = localStorage.getItem("activePage");
+
+  if (savedPage) {
+    // Remove "active" class from all pages and nav links
+    navigationLinks.forEach((link) => link.classList.remove("active"));
+    pages.forEach((page) => page.classList.remove("active"));
+
+    // Activate the correct page
+    navigationLinks.forEach((link) => {
+      if (link.innerHTML.toLowerCase() === savedPage) {
+        link.classList.add("active");
+      }
+    });
+
+    pages.forEach((page) => {
+      if (page.dataset.page === savedPage) {
+        page.classList.add("active");
+      }
+    });
+  }
+});
+
+// Save the active page when clicked
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    const selectedPage = this.innerHTML.toLowerCase();
+    localStorage.setItem("activePage", selectedPage);
+  });
+});
