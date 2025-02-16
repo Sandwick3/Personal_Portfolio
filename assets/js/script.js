@@ -106,6 +106,7 @@ for (let i = 0; i < selectItems.length; i++) {
 }
 
 // Filter variables
+const filterBtns = document.querySelectorAll("[data-filter-btn]");
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
@@ -119,6 +120,22 @@ const filterFunc = function (selectedValue) {
     }
   }
 };
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    let selectedCategory = this.innerText.toLowerCase(); // Convert text to lowercase
+
+    filterItems.forEach((item) => {
+      let itemCategory = item.dataset.category.toLowerCase(); // Convert data-category to lowercase
+
+      if (selectedCategory === "all" || itemCategory === selectedCategory) {
+        item.classList.add("active"); // Show item
+      } else {
+        item.classList.remove("active"); // Hide item
+      }
+    });
+  });
+});
 
 // Add event to all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
