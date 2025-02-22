@@ -157,7 +157,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("[data-form]");
   const formInputs = document.querySelectorAll("[data-form-input]");
   const formBtn = document.querySelector("[data-form-btn]");
+  const savedPage = localStorage.getItem("activePage");
+  if (savedPage) {
+    // Remove "active" class from all pages and nav links
+    navigationLinks.forEach((link) => link.classList.remove("active"));
+    pages.forEach((page) => page.classList.remove("active"));
 
+    // Activate the correct page
+    navigationLinks.forEach((link) => {
+      if (link.innerHTML.toLowerCase() === savedPage) {
+        link.classList.add("active");
+      }
+    });
+
+    pages.forEach((page) => {
+      if (page.dataset.page === savedPage) {
+        page.classList.add("active");
+      }
+    });
+  }
   // Add event listener to form submission
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -236,28 +254,6 @@ if (copyEmailBtn) {
 }
 
 // Load the last visited page from localStorage
-document.addEventListener("DOMContentLoaded", function () {
-  const savedPage = localStorage.getItem("activePage");
-
-  if (savedPage) {
-    // Remove "active" class from all pages and nav links
-    navigationLinks.forEach((link) => link.classList.remove("active"));
-    pages.forEach((page) => page.classList.remove("active"));
-
-    // Activate the correct page
-    navigationLinks.forEach((link) => {
-      if (link.innerHTML.toLowerCase() === savedPage) {
-        link.classList.add("active");
-      }
-    });
-
-    pages.forEach((page) => {
-      if (page.dataset.page === savedPage) {
-        page.classList.add("active");
-      }
-    });
-  }
-});
 
 // Save the active page when clicked
 navigationLinks.forEach((link) => {
@@ -266,3 +262,18 @@ navigationLinks.forEach((link) => {
     localStorage.setItem("activePage", selectedPage);
   });
 });
+function checkScreenSize() {
+  const avatarBox = document.querySelector(".avatar-box");
+  if (!avatarBox) return;
+  if (window.innerWidth < 580) {
+    avatarBox.classList.add("hidden"); // Hides the avatar
+  } else {
+    avatarBox.classList.remove("hidden"); // Shows the avatar again
+  }
+}
+
+// Run on page load
+checkScreenSize();
+
+// Run when window resizes
+window.addEventListener("resize", checkScreenSize);

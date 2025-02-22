@@ -1,22 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-  /**
-   * colors
-   */
-
-  /* gradient */
-
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
     hsl(240, 1%, 25%) 3%,
@@ -1077,7 +1059,7 @@ main {
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100%;
   max-width: 300px;
   max-height: 200px;
   border-radius: 16px;
@@ -1097,6 +1079,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
+
   background: transparent;
   z-index: 1;
   transition: var(--transition-1);
@@ -1135,6 +1118,7 @@ main {
 .project-img img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   transition: var(--transition-1);
 }
@@ -1398,13 +1382,34 @@ textarea.form-input::-webkit-resizer {
     min-width: calc(33.33% - 10px);
   }
 
+  .avatar-box {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 80px; /* Ensures it has a base width */
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .avatar-box img {
+    width: 100%; /* Fills container without exceeding */
+    max-width: 120px; /* Prevents it from getting too big */
+    display: block;
+    pointer-events: none;
+    user-drag: none;
+  }
+
+  .avatar-box:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
   /**
    * #PORTFOLIO, BLOG 
    */
 
   .project-img,
   .blog-banner-box {
-    height: auto;
+    max-width: 300px;
+    max-height: 200px;
   }
 }
 
@@ -1487,21 +1492,25 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box {
     border-radius: 30px;
-    overflow: hidden; /* Ensures image follows border-radius */
-    display: inline-block; /* Keeps it contained */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth glow transition */
+    overflow: hidden;
+    display: inline-block;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 120px;
+    height: 120px;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .avatar-box img {
-    width: 120px;
-    border-radius: 30px;
+    width: 100%; /* Fills container without exceeding */
+    max-width: 120px; /* Prevents it from getting too big */
     display: block;
-    pointer-events: none; /* Makes the image unclickable */
-    user-drag: none; /* Prevents dragging */
+    pointer-events: none;
+    user-drag: none;
   }
 
   .avatar-box:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Glow effect */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   }
 
   .info-content .name {
@@ -1701,7 +1710,8 @@ textarea.form-input::-webkit-resizer {
 
   .project-img,
   .blog-banner-box {
-    border-radius: 16px;
+    max-width: 300px;
+    max-height: 200px;
   }
 
   .blog-posts-list {
@@ -2040,7 +2050,16 @@ textarea.form-input::-webkit-resizer {
   .sidebar-info {
     flex-direction: column;
   }
-
+  .avatar-box {
+    border-radius: 30px;
+    overflow: hidden;
+    display: inline-block;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 120px;
+    height: 120px;
+    max-width: 100%;
+    max-height: 100%;
+  }
   .avatar-box img {
     width: 150px;
   }
@@ -2056,6 +2075,11 @@ textarea.form-input::-webkit-resizer {
 
   .info_more-btn {
     display: none;
+  }
+  .project-img,
+  .blog-banner-box {
+    max-width: 300px;
+    max-height: 200px;
   }
 
   .sidebar-info_more {
