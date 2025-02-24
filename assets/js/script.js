@@ -277,3 +277,13 @@ checkScreenSize();
 
 // Run when window resizes
 window.addEventListener("resize", checkScreenSize);
+function enterFullscreen() {
+  let viewer = document.getElementById("viewer");
+  if (viewer.requestFullscreen) {
+    viewer.requestFullscreen();
+  } else if (viewer.webkitRequestFullscreen) {
+    viewer.webkitRequestFullscreen(); // Safari
+  } else if (viewer.msRequestFullscreen) {
+    viewer.msRequestFullscreen(); // Internet Explorer
+  }
+}
