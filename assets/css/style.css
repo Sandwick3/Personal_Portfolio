@@ -131,8 +131,8 @@ button {
   overflow: hidden;
   display: inline-block;
   transition: box-shadow 0.3s ease-in-out;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   max-width: 100%;
   max-height: 100%;
 }
@@ -467,6 +467,7 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
+
   font-size: 24px;
 }
 
@@ -920,6 +921,31 @@ main {
   background: var(--jet);
 }
 
+/* .timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 8px;
+  width: 8px;
+  background: var(--text-gradient-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 8px 4px var(--text-gradient-yellow);
+  animation: lightbugGlow 2s ease-in-out infinite alternate;
+}
+@keyframes lightbugGlow {
+  0% {
+    box-shadow: 0 0 4px 2px var(--text-gradient-yellow);
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 12px 6px var(--text-gradient-yellow);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+} */
+
 .timeline-item::after {
   content: "";
   position: absolute;
@@ -967,17 +993,68 @@ main {
   font-weight: var(--fw-300);
 }
 
-.skill-progress-bg {
+/* .skill-progress-bg {
   background: var(--jet);
   width: 100%;
   height: 8px;
   border-radius: 10px;
+} */
+
+.skill-progress-bg {
+  position: relative;
+  background: var(--jet);
+  width: 100%;
+  height: 8px; /* keep your height */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .skill-progress-fill {
-  background: var(--text-gradient-yellow);
+  position: relative;
+  background: orange;
   height: 100%;
-  border-radius: inherit;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+
+.skill-progress-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* wider for smooth repeat */
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(234, 238, 9, 0.6) 0,
+    rgba(255, 255, 255, 0.6) 5px,
+    rgba(255, 255, 255, 0.3) 10px,
+    rgba(255, 255, 255, 0.3) 15px
+  );
+  animation: waveMove 7s linear infinite;
+  border-radius: 10px 0 0 10px;
+  pointer-events: none;
+}
+.skill-progress-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: glowFollow 7s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /*-----------------------------------*\
@@ -1126,7 +1203,7 @@ main {
   transition: var(--transition-1);
 }
 .project-item-icon-rocket {
-  --scale: 1;
+  --scale: 0.8;
   color: var(--orange-yellow-crayola);
   position: absolute;
   top: 5%; /* Moves it to the top */
@@ -1140,7 +1217,7 @@ main {
 }
 
 .project-item > a:hover .project-item-icon-box {
-  --scale: 1;
+  --scale: 0.8;
   opacity: 1;
 }
 
@@ -1419,8 +1496,8 @@ textarea.form-input::-webkit-resizer {
     border-radius: 20px;
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out;
-    width: 80px; /* Ensures it has a base width */
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
   }
 
@@ -2173,5 +2250,16 @@ textarea.form-input::-webkit-resizer {
 
   .timeline-text {
     max-width: 700px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  ion-icon {
+    font-size: 34px;
   }
 }
