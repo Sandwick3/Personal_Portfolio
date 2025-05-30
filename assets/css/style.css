@@ -224,7 +224,8 @@ article {
 }
 
 article.active {
-  display: block;
+  display: grid;
+  justify-content: center;
   animation: fade 0.5s ease backwards;
 }
 
@@ -339,7 +340,7 @@ main {
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 515px;
 }
 
 .sidebar-info {
@@ -617,7 +618,7 @@ main {
   overflow-x: auto;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
+  scroll-snap-type: x mandatory;
 }
 .testimonials-list::-webkit-scrollbar {
   height: 6px; /* Visible horizontal scrollbar */
@@ -1496,8 +1497,8 @@ textarea.form-input::-webkit-resizer {
     border-radius: 20px;
     overflow: hidden;
     transition: box-shadow 0.3s ease-in-out;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
   }
 
@@ -1518,6 +1519,24 @@ textarea.form-input::-webkit-resizer {
     max-width: 300px;
     max-height: 200px;
   }
+
+  article.active {
+    display: grid;
+    justify-content: center;
+    animation: fade 0.5s ease backwards;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 200px; */
+  margin-bottom: 10em;
+}
+
+ion-icon {
+  font-size: 34px;
 }
 
 /**

@@ -286,4 +286,21 @@ function enterFullscreen() {
   } else if (viewer.msRequestFullscreen) {
     viewer.msRequestFullscreen(); // Internet Explorer
   }
+
+  const list = document.querySelector(".testimonials-list");
+  const items = document.querySelectorAll(".testimonials-item");
+  let index = 0;
+
+  function scrollNext() {
+    const cardWidth = items[0].offsetWidth;
+    const gap = 15; // based on your CSS
+
+    const scrollTo = (cardWidth + gap) * index;
+    list.scrollTo({ left: scrollTo, behavior: "smooth" });
+
+    index++;
+    if (index >= items.length) index = 0;
+  }
+
+  setInterval(scrollNext, 3000);
 }
